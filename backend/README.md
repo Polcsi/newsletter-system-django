@@ -39,7 +39,13 @@ python3 -m venv .venv
 5. Install dependencies
 
 ```bash
-pip install django djangorestframework django-admin
+pip install -r requirements.txt
+```
+
+or
+
+```bash
+pip install django djangorestframework
 
 python -m pip install django-cors-headers
 ```
@@ -48,6 +54,10 @@ python -m pip install django-cors-headers
 
 ```bash
 python manage.py migrate
+
+python manage.py migrate --run-syncdb # OPTIONAL
+
+python manage.py makemigrations backend
 ```
 
 > **IMPORTANT**: If you change models, you need to run this command again
