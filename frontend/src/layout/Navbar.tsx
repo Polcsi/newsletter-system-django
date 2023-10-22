@@ -1,11 +1,28 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import BasicButton from "../components/buttons/BasicButton";
 
+const links: {
+  name: string;
+  path: string;
+}[] = [
+  {
+    name: "Home",
+    path: "/",
+  },
+  {
+    name: "Articles",
+    path: "#articles",
+  },
+  {
+    name: "Contact",
+    path: "#contact",
+  },
+];
+
 const Navbar = () => {
   return (
-    <nav className="w-screen h-[65px] flex justify-center shadow-lg">
+    <nav className="sticky top-0 z-10 w-full h-[65px] flex justify-center bg-white shadow-lg">
       <div className="w-[95%] max-w-[1200px] flex flex-row items-center justify-between">
         <div className="flex gap-5 items-center">
           <div className="">
@@ -24,20 +41,16 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <ul className="flex gap-5">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="#articles">Articles</Link>
-            </li>
-            <li>
-              <Link to="#contact">Contact</Link>
-            </li>
+          <ul className="gap-5 hidden md:flex">
+            {links.map((link) => (
+              <li key={link.name}>
+                <Link to={link.path}>{link.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
         <ul className="flex flex-row gap-3">
-          <li>
+          <li className="hidden sm:block">
             <Link to="login">
               <BasicButton className="ring-0">Login</BasicButton>
             </Link>
