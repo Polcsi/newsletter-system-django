@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import BasicButton from "../components/buttons/BasicButton";
+import { RiMenu3Fill } from "react-icons/ri";
 
 const links: {
   name: string;
@@ -59,6 +60,11 @@ const Navbar = () => {
             <Link to="register">
               <BasicButton>Sign Up</BasicButton>
             </Link>
+          </li>
+          <li className="sm:hidden flex items-center justify-center">
+            <button type="button">
+              <RiMenu3Fill className="text-2xl" />
+            </button>
           </li>
         </ul>
       </div>
