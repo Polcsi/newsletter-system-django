@@ -169,9 +169,14 @@ const Footer = () => {
       <section className="text-gray-400 bg-black border-t-white border-t-[1px] py-3">
         <div className="flex flex-row flex-wrap gap-3 justify-between w-[95%] max-w-[1200px] mx-auto text-sm">
           <p className="">
-            © 2021, Beauty Store, Inc. or its affiliates. All rights reserved.
+            © 2023, Newsletter System, Inc. or its affiliates. All rights
+            reserved.
           </p>
           <button
+            onClick={() => {
+              // Smooth scroll to top of the page
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             type="button"
             className="uppercase tracking-wide text-white flex gap-2 items-center"
           >
