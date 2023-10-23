@@ -1,7 +1,8 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
-interface BasicButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
+interface BasicButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
 }
 
@@ -12,6 +13,7 @@ const BasicButton = React.forwardRef<Ref, BasicButtonProps>((props, ref) => {
 
   return (
     <button
+      {...props}
       ref={ref}
       className={twMerge(
         "ring-1 ring-gray-900 rounded-full px-4 py-1 font-bold",
