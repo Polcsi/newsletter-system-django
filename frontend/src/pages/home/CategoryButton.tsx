@@ -11,22 +11,23 @@ const CategoryButton = ({ label, value }: CategoryButtonProperties) => {
 
   return (
     <motion.button
-      whileHover={{ scale: 1.05 }}
+      whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       type="button"
       onClick={() => {
         setSearchParams({ category: value });
       }}
-      className="text-white rounded-full p-1 select-none h-fit snap-center"
+      className="text-white rounded-full p-1 select-none h-fit snap-center hover:animate-[animate-angle_1s_linear_infinite]"
       style={
         searchParams.get("category") !== value
           ? {
               background:
-                "linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
+                "linear-gradient(var(--angle), rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)",
             }
           : {
+              animation: "animate-angle 1s linear infinite",
               background:
-                "linear-gradient(90deg, rgba(58,180,148,1) 0%, rgba(29,253,73,1) 100%)",
+                "linear-gradient(var(--angle), rgba(58,180,148,1) 0%, rgba(29,253,73,1) 100%)",
             }
       }
     >
