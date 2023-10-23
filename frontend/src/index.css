@@ -13,3 +13,46 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+@layer components {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+  }
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1c1f17 #dfe9eb;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 9px;
+  width: 9px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #bbc4c5;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #b8c0c2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #b8c0c2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #6e6e6c;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #29441f;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #5f5f5f;
+}
